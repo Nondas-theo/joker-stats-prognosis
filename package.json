@@ -1,0 +1,17 @@
+{
+  "name": "joker_mine",
+  "version": "1.0.0",
+  "description": "joker",
+  "license": "ISC",
+  "author": "Nondas",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "flatpickr": "^4.6.13",
+    "parcel": "^2.16.4"
+  }
+}

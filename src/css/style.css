@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --primary-color: rgb(10, 72, 130);
+  --primary-color--transparent: rgba(10, 72, 130, 0.85);
+  --element-first-color: rgb(198, 198, 198);
+  --element-second-color: rgb(80, 80, 80);
+}
+
+body {
+  background: var(--primary-color);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex-grow: 1;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+/* Γεική ρύθμιση button */
+.btn {
+  font-size: 0.8rem;
+  margin: 0.5rem auto;
+  font-weight: bold;
+  color: green;
+  background-image: linear-gradient(yellow, orange);
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 0 10px black;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+}
+
+header {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  padding: 1rem;
+  /* text-align: center; */
+}
+
+header > img {
+  width: 100%;
+  max-width: 200px;
+}
+
+header > p {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-shadow: -3px 3px 4px black;
+}
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.left--side {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+}
+
+.right--side {
+  flex: 3;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+}
+
+.left--side h3.basic {
+  text-decoration-line: underline;
+  margin-bottom: 0.5rem;
+  color: var(--element-second-color);
+}
+
+.left--side h3.last_draw {
+  color: var(--element-second-color);
+  text-align: center;
+  /* margin-bottom: 0.5rem; */
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.left--side h3.last_draw span {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--element-first-color);
+  text-shadow: -3px 3px 4px black;
+  -webkit-text-stroke: thin black;
+}
+
+.left--side p.last_draw {
+  margin: 1rem 0 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline overline 3px;
+  text-underline-offset: 5px;
+}
+
+.left--side .first > p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--element-second-color);
+}
+
+.left--side .second hr {
+  border: none;
+  width: 80%;
+  height: 3px;
+  background-color: black;
+  margin: 1rem auto;
+}
+
+.left--side .first form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.left--side .first form input {
+  width: 49%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.2rem 0.1rem;
+  background-color: var(--primary-color);
+  color: var(--element-first-color);
+  opacity: 1;
+}
+
+.left--side .first form input::placeholder {
+  color: var(--element-first-color);
+  font-size: 0.8rem;
+}
+
+.left--side .first form button {
+  width: 40%;
+}
+
+ul.numbers_last_draw {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.numbers_last_draw li {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  /* background-image: linear-gradient(yellow, orange); */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0.3rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  box-shadow: -5px 5px 10px black;
+}
+
+ul.numbers_last_draw > :nth-child(6) {
+  color: green;
+  background-image: linear-gradient(yellow, orange);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+.close-modal {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2.5rem;
+  font-weight: 500;
+  transition: transform ease-in-out 0.2s;
+}
+
+.close-modal:hover {
+  transform: rotate(90deg);
+}
+
+.prognosis {
+  background-color: rgb(150, 150, 150);
+  box-shadow: 0 0 20px black;
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  transform: scale(1);
+  transition: transform 0.5s ease;
+
+  overflow-y: auto;
+  /* --- ΚΡΥΒΕΙ ΤΗ ΜΠΑΡΑ ΣΕ FIREFOX & EDGE --- */
+  scrollbar-width: none; /*Firefox */
+  -ms-overflow-style: none; /*IE και παλιός Edge */
+}
+
+/* --- ΚΡΥΒΕΙ ΤΗ ΜΠΑΡΑ ΣΕ CHROME, SAFARI & OPERA --- */
+.prognosis::-webkit-scrollbar {
+  display: none;
+}
+
+.prognosis:focus {
+  outline: none; /* Αφαιρεί το περίγραμμα εστίασης που βάλαμε με το tabindex="0" στο div prognosis */
+}
+
+.modal.hidden .prognosis {
+  transform: scale(0.7);
+}
+
+.prognosis h2 {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline 4px;
+  text-underline-offset: 5px;
+  color: black;
+}
+
+.prognosis p {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  padding: 0 2rem;
+  font-weight: bold;
+}
+
+.prognosis ul li {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(yellow, orange);
+  font-size: 3rem;
+  font-weight: bold;
+  color: green;
+  margin: 0.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: -5px 5px 10px black;
+}
+
+.prognosis > :nth-child(1),
+.prognosis > :nth-child(4) {
+  margin-bottom: 1rem;
+}
+
+.prognosis > :nth-child(2) {
+  margin-bottom: 4rem;
+}
+
+/* Επιλεκτική προσθετική ρύθμιση button */
+.give_prognosis {
+  display: block;
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 2s ease,
+    visibility 2s ease;
+}
+
+/* Επιλεκτική προσθετική ρύθμιση button */
+.new_prognosi {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+/* CHART STYLE */
+.results-container {
+  display: flex;
+  flex-direction: column; /* ή row, ανάλογα το design σου */
+  gap: 20px;
+  padding: 20px;
+}
+
+.chart-box {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  /* Πολύ σημαντικό: Έλεγξε το μέγεθος εδώ! */
+  width: 100%;
+  max-width: 800px; /* π.χ. για να μην γίνει τεράστιο */
+  margin: 0 auto; /* κεντράρισμα */
+  /* Το Chart.js διατηρεί ένα aspect ratio (π.χ. 2:1). 
+  Δεν χρειάζεται height, θα το υπολογίσει μόνο του βάσει του width.*/
+}
+
+.chart-box h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: sans-serif;
+}
+
+/* ======================================== */
+/* --- FOOTER STYLES --- */
+/* ======================================== */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: auto; /* Εξασφαλίζει ότι το footer μένει πάντα στο κάτω μέρος της σελίδας */
+  border-top: 4px solid var(--element-first-color);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ======================================== */
+/* Επάνω τμήμα (Brand & API) */
+/* ======================================== */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.footer-brand h4 {
+  margin-bottom: 0.3rem;
+  color: #ffcc00; /* Ένα διακριτικό κιτρινωπό-χρυσό για αντίθεση */
+}
+
+.footer-api a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-api a:hover {
+  text-decoration: underline;
+}
+
+/* ======================================== */
+/* Μεσαίο τμήμα (Disclaimer) */
+/* ======================================== */
+.footer-disclaimer {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff4d4d; /* Κόκκινη γραμμή στα αριστερά για προσοχή */
+}
+
+.footer-disclaimer p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+/* ======================================== */
+/* Κάτω τμήμα (Copyright & Social) */
+/* ======================================== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.footer-bottom .copyright svg {
+  fill: #9c8a03;
+  width: 1rem;
+  vertical-align: middle;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* ======================================== */
+/* ======================================== */
+/* Styles for loading spinner */
+/* ======================================== */
+/* ======================================== */
+.spinner {
+  text-align: center;
+  margin: 5rem auto;
+}
+
+.spinner svg {
+  --color1: var(--element-first-color);
+  --color2: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+  animation: 1.2s linear infinite rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ======================================== */
+/* ======================================== */
+
+/* ======================================== */
+/* ======================================== */
+/* --- ΜΗΝΥΜΑ ΣΦΑΛΜΑΤΟΣ --- */
+/* ======================================== */
+/* ======================================== */
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+/* ======================================== */
+/* ======================================== */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+/* ======================================== */
+/* ======================================== */
+
+/* ======================================== */
+/* ======================================== */
+/* Responsive για μικρές οθόνες (Κινητά) */
+/* ======================================== */
+/* ======================================== */
+
+@media (max-width: 920px) and (min-width: 831px) {
+  .main {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .left--side {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+  }
+
+  .first {
+    width: 63%;
+  }
+
+  .second {
+    width: 35%;
+  }
+
+  .second hr {
+    display: none;
+  }
+
+  .right--side {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-bottom .copyright svg {
+    height: 1.1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 830px) {
+  .main {
+    width: 100%;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .left--side {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .first {
+    width: 90%;
+    margin: auto;
+  }
+
+  .second {
+    width: 90%;
+    margin: auto;
+  }
+
+  .results-container {
+    padding: 2px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-bottom .copyright svg {
+    height: 1.1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .prognosis ul li {
+    font-size: 2.5rem;
+    margin: 0.4rem;
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .prognosis h2 {
+    line-height: 2.5rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .prognosis ul li {
+    font-size: 2.1rem;
+    margin: 0.3rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="./src/img/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/js/controller.js"></script>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>Τζόκερ-Στατιστικά</title>
+  </head>
+  <body>
+    <header>
+      <p>
+        <img src="./src/img/tzoker-logo-original.svg" alt="" />...Στατιστικά και
+        Πρόγνωση
+      </p>
+    </header>
+
+    <div class="wrapper">
+      <div class="main">
+        <div class="left--side">
+          <div class="first">
+            <h3 class="basic">ΕΥΡΟΣ ΗΜΕΡΟΜΗΝΙΩΝ</h3>
+            <p>
+              Ορίστε από πότε έως πότε θέλετε να αντλήσουμε δεδομένα. Ανακαλύψτε
+              ποιοι αριθμοί κληρώνονται συχνότερα και ζητήστε από την εφαρμογή
+              να σας προτείνει έναν τυχαίο συνδυασμό με βάση τα στατιστικά!
+            </p>
+            <form class="range_date">
+              <div class="inputs">
+                <input
+                  type="text"
+                  id="date-from"
+                  placeholder="Από ημερομηνία..."
+                  autocomplete="off"
+                />
+                <input
+                  type="text"
+                  id="date-to"
+                  placeholder="Έως ημερομηνία..."
+                  autocomplete="off"
+                />
+              </div>
+              <button type="submit" class="btn submit--date">ΕΠΙΛΟΓΗ</button>
+            </form>
+
+            <button type="button" class="btn give_prognosis none">
+              Τυχαία <br />Επιλογή Αριθμών
+            </button>
+          </div>
+          <div class="second">
+            <!-- <hr />
+          <h3 class="last_draw">Κλήρωση: 3056</h3>
+          <p class="last_draw">Τρίτη 21 Απρίλη 2026</p>
+          <h3 class="last_draw">Αποτελέσματα Κλήρωσης</h3>
+          <ul class="numbers_last_draw">
+            <li>17</li>
+            <li>23</li>
+            <li>36</li>
+            <li>42</li>
+            <li>5</li>
+            <li>20</li>
+          </ul>
+          <hr /> -->
+          </div>
+        </div>
+
+        <div class="right--side">
+          <div class="results-container">
+            <div class="chart-box">
+              <h3 class="basic">Συχνότητα Κύριων Αριθμών (1-45)</h3>
+              <canvas id="mainNumsChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+              <h3 class="basic">Συχνότητα Αριθμών Τζόκερ (1-20)</h3>
+              <canvas id="jokerNumsChart"></canvas>
+            </div>
+          </div>
+
+          <!-- <div class="spinner">
+            <svg>
+              <use href="src/img/icons.svg#icon-spinner"></use>
+            </svg>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="modal hidden">
+        <!-- Το χαρακτηριστικό tabindex="0" λέει στον browser ότι αυτό το <div> επιτρέπεται να πάρει focus.-->
+        <div class="close-modal">&times;</div>
+        <div class="prognosis" tabindex="0">
+          <h2>ΠΙΘΑΝΟΙ 5 ΑΡΙΘΜΟΙ ΚΥΡΙΑΣ ΚΑΤΗΓΟΡΙΑΣ</h2>
+          <ul class="main-numbers">
+            <!-- <li>17</li>
+            <li>23</li>
+            <li>36</li>
+            <li>42</li>
+            <li>35</li> -->
+          </ul>
+
+          <h2>ΠΙΘΑΝΟΙ ΑΡΙΘΜΟΙ ΤΖΟΚΕΡ</h2>
+          <p>
+            Επιλέγουμε τον έναν ή και τους τρείς πιθανούς αριθμούς τζόκερ,
+            αυξάνοντας ανάλογα και τις στήλες που θα παίξουμε.
+          </p>
+          <ul class="bonus-numbers">
+            <!-- <li>3</li>
+            <li>17</li>
+            <li>20</li> -->
+          </ul>
+          <button type="button" class="btn new_prognosi">
+            Nέα Επιλογή Αριθμών
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h4>Στατιστικά & Πρόγνωση Τζόκερ</h4>
+            <p>
+              Μια δυναμική εφαρμογή (SPA) χτισμένη με Vanilla JS και
+              αρχιτεκτονική MVC.
+            </p>
+          </div>
+          <div class="footer-api">
+            <p>
+              Τα δεδομένα των κληρώσεων αντλούνται σε πραγματικό χρόνο από το
+              επίσημο
+              <a
+                href="https://www.opap.gr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >API του allwyn (πρώην ΟΠΑΠ) </a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-disclaimer">
+          <p>
+            <strong>⚠️ Αποποίηση Ευθυνών:</strong> Η παρούσα εφαρμογή
+            δημιουργήθηκε αποκλειστικά για εκπαιδευτικούς σκοπούς (Web
+            Development Portfolio). Οι "προγνώσεις" βασίζονται σε απλή
+            στατιστική συχνότητα παρελθοντικών κληρώσεων και
+            <strong>δεν αποτελούν</strong> παρότρυνση για στοιχηματισμό. Το
+            τζόκερ είναι παιχνίδι καθαρής τύχης και καμία εφαρμογή δεν μπορεί να
+            εγγυηθεί κέρδη. Παίξτε υπεύθυνα.
+          </p>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; <span id="current-year"></span> Φτιαγμένο με 💻 & ☕ από τον
+            <strong>Επαμεινώνδα Θεοφανίδη</strong>
+            <svg>
+              <use href="src/img/icons.svg#icon-my-logo"></use>
+            </svg>
+          </p>
+          <div class="social-links">
+            <a
+              href="mailto:nodas.theofanidis@gmail.com"
+              title="Στείλτε μου email"
+              >Email</a
+            >
+            <a
+              href="https://github.com/Nondas-theo"
+              target="_blank"
+              title="GitHub"
+              >GitHub</a
+            >
+            <!-- <a
+              href="https://linkedin.com/in/το-όνομά-σου"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              >LinkedIn</a
+            > -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('current-year').textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
