@@ -26,6 +26,7 @@ class DateView {
       dateFormat: 'Y-m-d',
       maxDate: 'today',
       locale: Greek,
+      disableMobile: true,
     };
 
     // 1. Αρχικοποιούμε το "Από"
