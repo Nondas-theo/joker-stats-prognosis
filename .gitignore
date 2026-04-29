@@ -3,3 +3,4 @@ dist
 .parcel-cache
 .prettierrc
 *.txt
+api-allwyn-original.js
