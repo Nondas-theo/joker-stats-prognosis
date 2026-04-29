@@ -633,6 +633,23 @@ footer {
   .prognosis h2 {
     line-height: 2.5rem;
   }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  header img {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  header p {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media (max-width: 570px) {
@@ -641,5 +658,47 @@ footer {
     margin: 0.3rem;
     width: 4rem;
     height: 4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .prognosis ul li {
+    font-size: 1.9rem;
+    margin: 0.2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .prognosis h2 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+  }
+
+  .prognosis p {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    padding: 0 0.8rem;
+  }
+
+  h3.basic {
+    font-size: 1rem;
+  }
+
+  header img {
+    width: 100%;
+    max-width: 75px;
+  }
+
+  header p {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    padding: 1rem 1rem 1rem 1rem;
+    margin-top: auto; /* Εξασφαλίζει ότι το footer μένει πάντα στο κάτω μέρος της σελίδας */
+    border-top: 4px solid var(--element-first-color);
+    margin-top: 0.5rem;
   }
 }
