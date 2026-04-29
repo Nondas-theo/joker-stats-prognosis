@@ -661,8 +661,8 @@ footer {
   }
 
   .left--side h3.last_draw span {
-    color: var(--element-second-color);
-    text-shadow: none;
+    color: var(--element-first-color);
+    text-shadow: 0 0 4px black;
     -webkit-text-stroke: 0;
   }
 }
@@ -692,13 +692,8 @@ footer {
     font-size: 1rem;
   }
 
-  header img {
-    width: 100%;
-    max-width: 75px;
-  }
-
   header p {
-    font-size: 1.3rem;
+    flex-direction: column;
   }
 
   footer {
@@ -706,6 +701,10 @@ footer {
     margin-top: auto; /* Εξασφαλίζει ότι το footer μένει πάντα στο κάτω μέρος της σελίδας */
     border-top: 4px solid var(--element-first-color);
     margin-top: 0.5rem;
+  }
+
+  .footer-bottom p.copyright {
+    line-height: 1.3rem;
   }
 
   .inputs {
@@ -719,8 +718,8 @@ footer {
   }
 
   .left--side h3.last_draw span {
-    color: var(--element-second-color);
-    text-shadow: none;
+    color: var(--element-first-color);
+    text-shadow: 0 0 4px black;
     -webkit-text-stroke: 0;
   }
 }
