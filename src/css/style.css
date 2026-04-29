@@ -659,14 +659,20 @@ footer {
     width: 4rem;
     height: 4rem;
   }
+
+  .left--side h3.last_draw span {
+    color: var(--element-second-color);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .prognosis ul li {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin: 0.2rem;
-    width: 3rem;
-    height: 3rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .prognosis h2 {
@@ -700,5 +706,21 @@ footer {
     margin-top: auto; /* Εξασφαλίζει ότι το footer μένει πάντα στο κάτω μέρος της σελίδας */
     border-top: 4px solid var(--element-first-color);
     margin-top: 0.5rem;
+  }
+
+  .inputs {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0.5rem auto;
+  }
+
+  .left--side .first form input {
+    width: 100%;
+  }
+
+  .left--side h3.last_draw span {
+    color: var(--element-second-color);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
   }
 }
