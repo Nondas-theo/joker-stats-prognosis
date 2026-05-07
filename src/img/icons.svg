@@ -1,8 +1,8 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-spinner" viewBox="0 0 32 32">
-<path fill="none" stroke="#b4b4b4" style="stroke: var(--color1, #b4b4b4)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="3.7333" d="M16 28.933c-7.067 0-12.933-5.867-12.933-12.933 0-2.933 0.933-5.6 2.533-7.733 2.4-3.2 6.133-5.2 10.4-5.2s8 2 10.267 5.2 2.533 4.8 2.533 7.733c0 7.067-5.867 12.933-12.933 12.933z"></path>
-<path fill="none" stroke="rgb(180, 180, 180)" style="stroke: var(--color2, rgb(0, 0, 0))" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="3.7333" d="M5.6 8.267c2.4-3.2 6.133-5.2 10.4-5.2s8 2 10.267 5.2"></path>
+<path fill="none" stroke="rgb(198, 198, 198)" style="stroke: rgb(198, 198, 198)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="3.7333" d="M16 28.933c-7.067 0-12.933-5.867-12.933-12.933 0-2.933 0.933-5.6 2.533-7.733 2.4-3.2 6.133-5.2 10.4-5.2s8 2 10.267 5.2 2.533 4.8 2.533 7.733c0 7.067-5.867 12.933-12.933 12.933z"></path>
+<path fill="none" stroke="rgb(198, 198, 198)" style="stroke: rgb(10, 72, 130)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="3.7333" d="M5.6 8.267c2.4-3.2 6.133-5.2 10.4-5.2s8 2 10.267 5.2"></path>
 </symbol>
 <symbol id="icon-my-logo" viewBox="0 0 51.7 66.6">
   <g id="Layer_1">

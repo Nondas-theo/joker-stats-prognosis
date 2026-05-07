@@ -463,8 +463,6 @@ footer {
 }
 
 .spinner svg {
-  --color1: var(--element-first-color);
-  --color2: var(--primary-color);
   width: 3rem;
   height: 3rem;
   animation: 1.2s linear infinite rotate;
