@@ -459,16 +459,16 @@ footer {
 /* ======================================== */
 .spinner {
   text-align: center;
-  margin: 5rem auto;
+  margin: auto;
 }
 
 .spinner svg {
-  width: 3rem;
-  height: 3rem;
-  animation: 1.2s linear infinite rotate;
+  width: 5rem;
+  /* height: 6rem; */
+  /* animation: 1.2s linear infinite rotate; */
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: rotate(0);
   }
@@ -476,7 +476,7 @@ footer {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 /* ======================================== */
 /* ======================================== */
 
