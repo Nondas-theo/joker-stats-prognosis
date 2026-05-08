@@ -28,7 +28,7 @@ live project on Netlify (https://joker-pro-stats.netlify.app)
 
 Για να τρέξετε το project τοπικά, ακολουθήστε τα παρακάτω βήματα:
 **Κλωνοποίηση του repository:**
-git clone [https://github.com/Nondas-theo/joker_mine.git](https://github.com/Nondas-theo/joker_mine.git)
+git clone [https://github.com/Nondas-theo/joker_mine.git](https://github.com/Nondas-theo/joker-stats-prognosis.git)
 
 ---
 
