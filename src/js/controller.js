@@ -7,11 +7,16 @@ import lastdrawView from './views/lastdrawView.js';
 // console.log('Ο Controller φορτώθηκε!😊😊😊');
 
 const controlLastDraw = async function () {
-  lastdrawView.renderSpinner();
-  const data = await model.fetchLastDrawData();
-  // console.log(data);
-  lastdrawView.renderLastDraw(data);
-  lastdrawView._clearSpinner();
+  try {
+    lastdrawView.renderSpinner();
+    const data = await model.fetchLastDrawData();
+    // console.log(data);
+    lastdrawView.renderLastDraw(data);
+    lastdrawView._clearSpinner();
+  } catch (err) {
+    console.error('Σφάλμα στον Controller:', err);
+    dateView.renderError('Πρόβλημα σύνδεσης. Δοκιμάστε ξανά αργότερα.');
+  }
 };
 
 const controlSearchResults = async function () {
